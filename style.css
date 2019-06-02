@@ -1,5 +1,17 @@
+:root {
+    --primary-c: #26a2cc;
+    --primary-c-darker: #226b91;
+    --primary-c-accent: #2bd0ff;
+    --secondary-c: #B2D7F5;
+    --action-c: #ff2c44;
+    --action-c-darker: #b2252e;
+    --white: #FDFBFB;
+    --text: #082943;
+    --bg: var(--primary-c);
+}
+
 body{
-	background-color: #131515;
+	background-color: var(--primary-c-darker);
 	color: white;
 	font-size: 15px;
 	text-align: center;
@@ -7,7 +19,17 @@ body{
 a{
 	color: white;
 }
-button{
-	padding: 2px;
-	background-color: #339989;
+.btn {
+    min-width: 90px;
+    height: 40px;
+    margin: 1%;
+    overflow: hidden;
+    font-weight: bolder;
+    border-width: 0;
+    outline: none;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    background-color: var(--primary-c);
+    color: #ecf0f1;
+    transition: background-color .3s;
 }
