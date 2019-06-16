@@ -71,6 +71,10 @@ input, select, textarea {
 	-ms-appearance: none;
 	appearance: none;
 }
+canvas{
+	text-align: center;
+	margin: auto;
+}
 
 /* Basic */
 

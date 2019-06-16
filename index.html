@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script> 
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -138,6 +139,79 @@
 									<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
 									posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
 								</header>
+								<canvas id="skills" width="400px" height="400px"></canvas>
+								<canvas id="grades" width="1000px" height="400px"></canvas>
+								<script type="text/javascript">
+									let ctx_grades = document.getElementById('grades').getContext('2d');
+									let ctx_skills = document.getElementById('skills').getContext('2d');
+									var myChart = new Chart(ctx_grades, {
+									    type: 'line',
+									    data: {
+									        labels: ['First Year-First Semester', 'First Year-Second Semester',
+									         'Second Year-First Semester', 'Second Year-Second Semester',
+									         'Third Year-First Semester', 'Third Year-Second Semester'],
+									        datasets: [{
+									            label: 'Average of Grades',
+									            data: [30, 28, 27, 28, 29, 28],
+									            backgroundColor: [
+									                'rgba(255, 99, 132, 0.2)',
+									                'rgba(54, 162, 235, 0.2)',
+									                'rgba(255, 206, 86, 0.2)',
+									                'rgba(75, 192, 192, 0.2)',
+									                'rgba(153, 102, 255, 0.2)',
+									                'rgba(255, 159, 64, 0.2)'
+									            ],
+									            borderColor: [
+									                'rgba(255, 99, 132, 1)',
+									                'rgba(255, 99, 132, 1)',
+									                'rgba(255, 99, 132, 1)',
+									                'rgba(255, 99, 132, 1)',
+									                'rgba(255, 99, 132, 1)',
+									                'rgba(255, 99, 132, 1)'
+									            ],
+									            borderWidth: 1
+									        }]
+									    },
+									    options: {
+									        scales: {
+									            yAxes: [{
+									                ticks: {
+									                    beginAtZero: true
+									                }
+									            }]
+									        },
+									        responsive: false,
+    										maintainAspectRatio: true
+									    }
+									});
+									var myChart2 = new Chart(ctx_skills, {
+									    type: 'radar',
+									    data: {
+									        labels: ['C++','Java','HTML','CSS',
+									        'Javascript'],
+									        datasets: [{
+									            label: 'Programming Languages Skills',
+									            data: [90, 80, 50, 40, 75],
+									            backgroundColor: [
+									                'rgba(255, 99, 132, 0.3)'
+									            ],
+									            borderColor: [
+									                'rgba(255, 99, 132, 1)'
+									            ]
+									        }]
+									    },
+									    options: {
+									    	scale:{
+									    		ticks:{
+									    			beginAtZero:true,
+									    			max: 100,
+									    		}
+									    	},
+									        responsive: false,
+    										maintainAspectRatio: true
+									    }
+									});
+								</script>
 								<ul class="statistics">
 									<li class="style1">
 										<span class="icon fa-code-fork"></span>
