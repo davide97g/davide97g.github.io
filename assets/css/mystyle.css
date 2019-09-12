@@ -1,0 +1,18 @@
+#first {
+  text-align: left;
+}
+.features {
+  text-align: center;
+}
+#first header.major h2:after {
+  margin-left: initial !important;
+}
+#otherProjects {
+  width: 90%;
+  text-align: center;
+  margin: auto;
+}
+
+#otherProjects a {
+  margin: 0.2em;
+}
